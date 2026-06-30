@@ -1,0 +1,333 @@
+body {
+    margin: 0;
+}
+
+/* allows these components to work properly w/ electron */
+button, .progress-bar, .progress-container, .progress-dot {
+    -webkit-app-region: no-drag; 
+}
+
+/* main box customization */
+.main-box{
+    background-image: url(assets/main-box.PNG);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 200px;
+    height: 320px;
+    align-items: center;
+    -webkit-app-region: drag;
+    transition:
+        width 0.2s ease,
+        background-image 0.3s ease;  
+}
+/* ends here */
+
+
+/* div customization */
+.window-controls{
+    position: absolute;
+    top: 24px;
+    left: 36px;
+    z-index: 10;
+}
+
+.window-controls img{
+    width: 16px;
+    height: 16px;
+}
+
+#close-button{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#minimize-button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: -5px;
+}
+/* window-controls div ends here */
+
+/* song cover's customization */
+#song-cover {
+    padding-top: 30px;
+    width: 150px;
+    margin-bottom: -13px;
+    margin-right: 8px;
+}
+
+/* mute button and song info section */
+.top-row{
+    position: relative;
+    width: 155px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* volume button's customization on the very left */
+#volume-button {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#volume-button img{
+    width: 18px;
+    height: 18px;
+}
+/* ends here */
+
+
+/* song-info div's customization */
+.song-info {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 12px;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* song name and artist's name customization */
+#song-name {
+    color: rgb(0, 0, 0);
+    font-family: "Gochi Hand", cursive;
+    font-size: 15px;
+    margin-bottom: -2px;
+    margin-right: 8px;
+}
+
+#artist-name {
+    color: rgb(0, 0, 0);
+    font-family: "Gochi Hand", cursive;
+    font-size: xx-small;
+    margin-top: -2px;
+    margin-bottom: -8px;
+    margin-right: 8px;
+}
+
+ /* allowing long names to be wrapped with ellipsis instead of them stacking */
+#song-name,
+#artist-name {
+    max-width: 100x;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* ends here */
+
+/* progress bar's customization */
+.progress-container{
+    position: relative;
+    width: 155px;
+    height: 20px;
+    margin-top: -5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.progress-bar{
+    width: 100%;
+    height: auto;
+}
+
+/* making the dot move along when the song plays */
+.progress-dot{
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 12.5px;
+    height: 12.5px;
+    transform: translateY(-50%);
+}
+/* progress bar's customization ends here */
+
+
+/* bottom-row div's customization (incl. shuffle, repeat, time display, and rotate)  */
+.bottom-row{
+    width: 155px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -10px;
+
+}
+
+/* all three buttons' customization */
+.bottom-button{
+    margin-left: -3px;
+    margin-top: -3px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bottom-button img{
+    width: 20px;
+    height: 20px;
+}
+
+#repeat-button{
+    margin-left: -20px;
+}
+
+/* time display's customization */
+.song-duration{
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Gochi Hand", cursive;
+    font-size: 11px;
+    font-weight: bolder;
+    margin-top: -10px;
+    margin-right: 6px;
+    margin-bottom: -7px;
+    -webkit-app-region: no-drag;
+}
+/* ends here */
+
+
+/* control panel (incl. previous play/pause and next) at the bottom */
+.controls{
+    position: relative;
+    width: 158px;
+    height: 50px;
+    margin-right: 10px;
+    margin-top: 10px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+/* panel's customization */
+.panel-img{
+    position: absolute;
+    width: 158px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* buttons customization */
+.controlBtn{
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* buttons scaling */
+.controls-img{
+    width: 32px;
+    height: 32px;
+}
+/* control panel's customization ends here */
+
+
+/* horizontal layout of the player */
+.main-box.horizontal{
+    background-image: url(assets/horizontal-main-box.PNG);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    flex-direction: row;
+    width: 320px;
+    height: 185px;
+    padding: 15px;
+}
+
+/* song cover's position modification */
+.main-box.horizontal #song-cover{
+    width: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+/* right column's customization (the rest of the content) */
+.main-box.main-box.horizontal .right-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.main-box.main-box.horizontal .top-row,
+.main-box.main-box.horizontal .progress-container,
+.main-box.main-box.horizontal .bottom-row,
+.main-box.main-box.horizontal .controls{
+    width: 158px;
+}
+
+/* control buttons' mod */
+.main-box.horizontal .controls{
+    width: 158px;
+    height: 50px;
+    margin-top: 15px;
+    justify-content: space-around;
+}
+
+.main-box.horizontal .panel-img{
+    width: 158px;
+    height: 50px;
+}
+
+/* avoids overflowing */
+.main-box.horizontal .right-column{
+    flex-shrink: 0;
+}
+/* ends here */
+
+/* transition work */
+#rotate-img {
+  transition: transform 0.4s ease;
+  transform: rotate(0deg);
+}
+
+/* clicked horizontal state */
+.rotate-forward {
+  transform: rotate(90deg);
+}
+
+/* default layout -> hover rotates forward (+90°) */
+.main-box:not(.horizontal) #rotate-button:hover #rotate-img {
+  transform: rotate(90deg);
+}
+
+/* horizontal layout -> hover rotates backward (-90°) */
+.main-box.horizontal #rotate-button:hover #rotate-img {
+  transform: rotate(-90deg);
+}
+
+/* other buttons' transition */
+button{
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        filter 0.2s ease;
+}
+
+button:hover{
+    transform: scale(1.2);
+    filter: brightness(.15);
+}
+
+button:active{
+    transform: scale(1);
+    filter: brightness(.15);
+}

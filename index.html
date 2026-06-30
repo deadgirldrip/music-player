@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>based music player</title>
+    <link rel="stylesheet" href="base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    
+    <link rel="preload" as="image" href="assets/main-box.PNG">
+    <link rel="preload" as="image" href="assets/horizontal-main-box.PNG">
+    <link rel="preload" as="image" href="assets/control-panel.PNG">
+</head>
+<body>
+    <!-- biggest box / base -->
+    <div class="main-box">
+
+        <!-- close button and minimize button next to each other -->
+        <div class="window-controls">
+            <button id="close-button"> <img src="assets/close-button.PNG" alt="close"></button>
+            <button id="minimize-button"> <img src="assets/minimize-button.PNG" alt="minimize"></button>
+        </div>
+        
+        <!-- song image -->
+        <img src="assets/flex-musix.PNG" alt="" id="song-cover">
+
+        <!-- wrapping content below the song cover -->
+        <div class="right-column">
+            <!-- top row includes volume button and song info (artist's name and song) -->
+            <div class="top-row">
+                <button id="volume-button">
+                    <img id ="mute-img" src="assets/volume-off.PNG" alt="volume off">
+                </button>
+
+                <div class="song-info">
+                    <p id="song-name">song title ^_^</p>
+                    <p id = "artist-name"> artist name</p>
+                </div>
+            </div>
+
+            <!-- progress bar area -->
+            <div class="progress-container">
+                <img src="assets/progress-line.PNG" alt="" class="progress-bar">
+                <img src="assets/progress-dot.PNG" alt="" class="progress-dot">
+            </div>        
+
+            <!-- bottom row includes repeat, shuffle, time display, and rotate -->
+            <div class="bottom-row">
+
+                <!-- shuffle -->
+                <button class="bottom-button" id="shuffle-button"> 
+                    <img src="assets/shuffle-off.PNG" alt="shuffle"> 
+                </button>
+
+                <!-- repeat -->
+                <button class="bottom-button" id="repeat-button"> 
+                    <img src="assets/repeat-off.PNG" alt="repeat"> 
+                </button>
+
+                <!-- time display (current/duration) -->
+                <div class="song-duration">
+                    <span id="current-time">0:00</span>
+                    <span> / </span>
+                    <span id="duration">0:00</span>
+                </div>
+                
+                <!-- rotate -->
+                <button class="bottom-button" id="rotate-button">
+                    <img id="rotate-img" src="assets/switch-layout.PNG" alt="horizontal layout">
+                </button>
+
+            </div>
+
+            <!-- control panel section -->
+            <div class="controls">
+                <!-- panel image -->
+                <img src="assets/control-panel.PNG" alt="panel" class="panel-img">
+
+                <!-- prev button -->
+                <button class="controlBtn" id="prev-button">
+                    <img src="assets/prev-button.PNG" alt="prev" class="controls-img">
+                </button>
+
+                <!-- play/pause buttons -->
+                <button class="controlBtn" id="play-button">                
+                    <img src="assets/play-button-1.PNG" alt="play" class="controls-img" id="play-img">
+                </button>
+
+                <!-- next button -->
+                <button class="controlBtn" id="next-button">
+                    <img src="assets/next-button.PNG" alt="next" class="controls-img">
+                </button>
+
+            </div>
+        </div>
+
+        <!-- audio input -->
+        <audio id="audio" src="rehhab.mp3"></audio>
+
+        <!-- javascript -->
+        <script src="script.js"></script>
+
+    </div>
+</body>
+</html>
